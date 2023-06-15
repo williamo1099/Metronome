@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     // MARK: - PROPERTY
     @State var metronome: Metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
     
@@ -31,7 +31,7 @@ struct ContentView: View {
 // MARK: - PREVIEW
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
             .preferredColorScheme(.dark)
     }
 }

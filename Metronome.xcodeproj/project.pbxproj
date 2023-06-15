@@ -14,7 +14,7 @@
 		620989962A3AE78D002CCABC /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620989952A3AE78D002CCABC /* AudioPlayer.swift */; };
 		620989982A3AE864002CCABC /* MetronomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620989972A3AE864002CCABC /* MetronomeView.swift */; };
 		624709C32A3AD4B4002AEE60 /* MetronomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624709C22A3AD4B4002AEE60 /* MetronomeApp.swift */; };
-		624709C52A3AD4B4002AEE60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624709C42A3AD4B4002AEE60 /* ContentView.swift */; };
+		624709C52A3AD4B4002AEE60 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624709C42A3AD4B4002AEE60 /* MainView.swift */; };
 		624709C72A3AD4B6002AEE60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624709C62A3AD4B6002AEE60 /* Assets.xcassets */; };
 		624709CA2A3AD4B6002AEE60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624709C92A3AD4B6002AEE60 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -28,7 +28,7 @@
 		620989972A3AE864002CCABC /* MetronomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeView.swift; sourceTree = "<group>"; };
 		624709BF2A3AD4B4002AEE60 /* Metronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metronome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624709C22A3AD4B4002AEE60 /* MetronomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeApp.swift; sourceTree = "<group>"; };
-		624709C42A3AD4B4002AEE60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		624709C42A3AD4B4002AEE60 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		624709C62A3AD4B6002AEE60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		624709C92A3AD4B6002AEE60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				624709C22A3AD4B4002AEE60 /* MetronomeApp.swift */,
-				624709C42A3AD4B4002AEE60 /* ContentView.swift */,
+				624709C42A3AD4B4002AEE60 /* MainView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -56,9 +56,7 @@
 		620989872A3AD5D9002CCABC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6209898C2A3AD702002CCABC /* bpmView.swift */,
-				620989972A3AE864002CCABC /* MetronomeView.swift */,
-				620989902A3ADB7B002CCABC /* ButtonView.swift */,
+				6209899B2A3AF111002CCABC /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -85,6 +83,16 @@
 				620989932A3AE778002CCABC /* metronome-click.m4a */,
 			);
 			path = Sound;
+			sourceTree = "<group>";
+		};
+		6209899B2A3AF111002CCABC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6209898C2A3AD702002CCABC /* bpmView.swift */,
+				620989972A3AE864002CCABC /* MetronomeView.swift */,
+				620989902A3ADB7B002CCABC /* ButtonView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		624709B62A3AD4B4002AEE60 = {
@@ -196,7 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				624709C52A3AD4B4002AEE60 /* ContentView.swift in Sources */,
+				624709C52A3AD4B4002AEE60 /* MainView.swift in Sources */,
 				6209898B2A3AD600002CCABC /* MetronomeModel.swift in Sources */,
 				620989912A3ADB7B002CCABC /* ButtonView.swift in Sources */,
 				620989982A3AE864002CCABC /* MetronomeView.swift in Sources */,
@@ -337,6 +345,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -370,6 +379,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

@@ -13,7 +13,7 @@ struct MetronomeView: View {
     
     // MARK: - BODY
     var body: some View {
-        Image("metronome-1")
+        Image("metronome-\(metronome.pendulumPosition)")
             .resizable()
             .scaledToFit()
             .foregroundColor(Color.primary)
