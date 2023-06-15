@@ -36,6 +36,7 @@ struct bpmView: View {
                     .bpmButtonModifier()
                     .offset(x: animating ? 0.0 : -20.0)
             }
+            .disabled(metronome.isPlaying)
             
             Text("\(metronome.bpm) bpm")
                 .font(.largeTitle)
@@ -52,6 +53,7 @@ struct bpmView: View {
                     .bpmButtonModifier()
                     .offset(x: animating ? 0.0 : 20.0)
             }
+            .disabled(metronome.isPlaying)
         } //: HSTACK
         .opacity(animating ? 1.0 : 0.0)
         .onAppear {

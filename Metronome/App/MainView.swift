@@ -25,6 +25,19 @@ struct MainView: View {
             ButtonView(metronome: $metronome)
         } //: VSTACK
         .padding()
+        .overlay(
+            Button {
+                // Reset metronome.
+                metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
+            } label: {
+                Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                    .font(.title)
+                    .foregroundColor(Color.accentColor)
+                    .padding()
+            }
+            .disabled(metronome.isPlaying)
+            , alignment: .trailing
+        )
     }
 }
 
