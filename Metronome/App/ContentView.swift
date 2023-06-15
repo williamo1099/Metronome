@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - PROPERTY
+    @State var metronome: Metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
+    
+    // MARK: - BODY
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            bpmView(metronome: $metronome)
+            
+            Spacer()
+            
+            ButtonView(metronome: $metronome)
         }
         .padding()
     }
 }
 
+// MARK: - PREVIEW
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
     }
 }
