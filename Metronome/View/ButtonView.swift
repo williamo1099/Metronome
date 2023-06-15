@@ -23,14 +23,13 @@ struct ButtonView: View {
                 .foregroundColor(Color.primary)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 30)
+                .frame(minWidth: 0, maxWidth: .infinity)
             
                 .background(
                     Capsule()
                         .fill(Color.accentColor)
-                        .frame(minWidth: 0, maxWidth: .infinity)
                 )
         }
-
     }
 }
 

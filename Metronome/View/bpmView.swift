@@ -35,6 +35,7 @@ struct bpmView: View {
             Text("\(metronome.bpm) bpm")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
+                .frame(minWidth: 150)
             
             Button {
                 // Increase metronome bpm.

@@ -18,8 +18,12 @@ struct ContentView: View {
             
             Spacer()
             
+            MetronomeView(metronome: $metronome)
+            
+            Spacer()
+            
             ButtonView(metronome: $metronome)
-        }
+        } //: VSTACK
         .padding()
     }
 }
