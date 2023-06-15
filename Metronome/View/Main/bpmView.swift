@@ -21,6 +21,8 @@ struct bpmView: View {
     // MARK: - PROPERTY
     @Binding var metronome: Metronome
     
+    @State private var animating: Bool = false
+    
     // MARK: - BODY
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
@@ -32,6 +34,7 @@ struct bpmView: View {
             } label: {
                 Image(systemName: "minus.circle.fill")
                     .bpmButtonModifier()
+                    .offset(x: animating ? 0.0 : -20.0)
             }
             
             Text("\(metronome.bpm) bpm")
@@ -47,8 +50,15 @@ struct bpmView: View {
             } label: {
                 Image(systemName: "plus.circle.fill")
                     .bpmButtonModifier()
+                    .offset(x: animating ? 0.0 : 20.0)
             }
         } //: HSTACK
+        .opacity(animating ? 1.0 : 0.0)
+        .onAppear {
+            withAnimation(.easeOut(duration: 0.5)) {
+                animating = true
+            }
+        }
     }
 }
 

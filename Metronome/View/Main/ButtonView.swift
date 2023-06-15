@@ -12,12 +12,12 @@ struct ButtonView: View {
     @Binding var metronome: Metronome
     
     @State private var timer: Timer?
+    @State private var animating: Bool = false
     
     // MARK: - BODY
     var body: some View {
         Button {
             // Start metronome.
-            
             if !metronome.isPlaying {
                 // Start metronome
                 timer = Timer.scheduledTimer(withTimeInterval: 60.0 / Double(metronome.bpm), repeats: true) {_ in
@@ -47,11 +47,17 @@ struct ButtonView: View {
                 .padding(.vertical, 10)
                 .padding(.horizontal, 30)
                 .frame(minWidth: 0, maxWidth: .infinity)
-            
                 .background(
                     Capsule()
                         .fill(Color.accentColor)
                 )
+                .opacity(animating ? 1.0 : 0.0)
+        } //: BUTTON
+        
+        .onAppear {
+            withAnimation(.easeOut(duration: 0.5)) {
+                animating = true
+            }
         }
     }
 }

@@ -11,12 +11,21 @@ struct MetronomeView: View {
     // MARK: - PROPERTY
     @Binding var metronome: Metronome
     
+    @State private var animating: Bool = false
+    
     // MARK: - BODY
     var body: some View {
         Image("metronome-\(metronome.pendulumPosition)")
             .resizable()
             .scaledToFit()
             .foregroundColor(Color.primary)
+            .opacity(animating ? 1.0 : 0.0)
+            .offset(y: animating ? 20.0 : 0.0)
+            .onAppear {
+                withAnimation(.easeOut(duration: 0.5)) {
+                    animating = true
+                }
+            }
     }
 }
 
