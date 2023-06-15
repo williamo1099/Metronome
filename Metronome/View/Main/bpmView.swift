@@ -26,7 +26,9 @@ struct bpmView: View {
         HStack(alignment: .center, spacing: 20) {
             Button {
                 // Decrease metronome bpm.
-                metronome.bpm -= 1
+                if metronome.bpm > 40 {
+                    metronome.bpm -= 1
+                }
             } label: {
                 Image(systemName: "minus.circle.fill")
                     .bpmButtonModifier()
@@ -39,7 +41,9 @@ struct bpmView: View {
             
             Button {
                 // Increase metronome bpm.
-                metronome.bpm += 1
+                if metronome.bpm < 200 {
+                    metronome.bpm += 1
+                }
             } label: {
                 Image(systemName: "plus.circle.fill")
                     .bpmButtonModifier()

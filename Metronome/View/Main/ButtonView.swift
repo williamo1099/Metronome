@@ -11,10 +11,33 @@ struct ButtonView: View {
     // MARK: - PROPERTY
     @Binding var metronome: Metronome
     
+    @State private var timer: Timer?
+    
     // MARK: - BODY
     var body: some View {
         Button {
             // Start metronome.
+            
+            if !metronome.isPlaying {
+                // Start metronome
+                timer = Timer.scheduledTimer(withTimeInterval: 60.0 / Double(metronome.bpm), repeats: true) {_ in
+                    if metronome.pendulumPosition == 0 {
+                        metronome.pendulumPosition = 1
+                    } else {
+                        metronome.pendulumPosition = 0
+                    }
+                    
+                    playAudio(name: "metronome-click", type: "m4a")
+                }
+            } else {
+                // Stop metronome
+                if timer != nil {
+                    timer?.invalidate()
+                }
+                timer = nil
+                timer = Timer()
+            }
+
             metronome.isPlaying.toggle()
         } label: {
             Text(metronome.isPlaying ? "STOP" : "START")
