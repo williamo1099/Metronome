@@ -11,6 +11,8 @@ struct MainView: View {
     // MARK: - PROPERTY
     @State var metronome: Metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
     
+    @State private var isToolbarOpened: Bool = false
+    
     // MARK: - BODY
     var body: some View {
         NavigationStack {
@@ -30,7 +32,13 @@ struct MainView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     ToolbarView(metronome: $metronome)
-                        .offset(x: -150)
+                        .offset(x: isToolbarOpened ? -70 : -150)
+                    
+                        .onTapGesture {
+                            withAnimation(.easeOut(duration: 0.3)) {
+                                isToolbarOpened.toggle()
+                            }
+                        }
                 } //: TOOLBAR ITEM
             } //: TOOLBAR
         } //: NAVIGATION STACK

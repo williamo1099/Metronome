@@ -20,7 +20,6 @@ struct MetronomeView: View {
             .scaledToFit()
             .foregroundColor(Color.primary)
             .opacity(animating ? 1.0 : 0.0)
-            .offset(y: animating ? 20.0 : 0.0)
             .onAppear {
                 withAnimation(.easeOut(duration: 0.5)) {
                     animating = true

@@ -18,6 +18,9 @@
 		624709C72A3AD4B6002AEE60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624709C62A3AD4B6002AEE60 /* Assets.xcassets */; };
 		624709CA2A3AD4B6002AEE60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624709C92A3AD4B6002AEE60 /* Preview Assets.xcassets */; };
 		62E2A6032A3C055D0006BE51 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A6022A3C055D0006BE51 /* ToolbarView.swift */; };
+		62E2A6052A3C0CFD0006BE51 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A6042A3C0CFD0006BE51 /* InfoView.swift */; };
+		62E2A6082A3C0DD80006BE51 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A6072A3C0DD80006BE51 /* HeaderView.swift */; };
+		62E2A60A2A3C0E930006BE51 /* FeatureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A6092A3C0E930006BE51 /* FeatureItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		624709C92A3AD4B6002AEE60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		624F16222A3B0F40007A695B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		62E2A6022A3C055D0006BE51 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		62E2A6042A3C0CFD0006BE51 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		62E2A6072A3C0DD80006BE51 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		62E2A6092A3C0E930006BE51 /* FeatureItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,7 @@
 			children = (
 				624709C22A3AD4B4002AEE60 /* MetronomeApp.swift */,
 				624709C42A3AD4B4002AEE60 /* MainView.swift */,
+				62E2A6042A3C0CFD0006BE51 /* InfoView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -60,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				6209899B2A3AF111002CCABC /* Main */,
+				62E2A6062A3C0DB20006BE51 /* Info */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -91,10 +99,10 @@
 		6209899B2A3AF111002CCABC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				62E2A6022A3C055D0006BE51 /* ToolbarView.swift */,
 				6209898C2A3AD702002CCABC /* bpmView.swift */,
 				620989972A3AE864002CCABC /* MetronomeView.swift */,
 				620989902A3ADB7B002CCABC /* ButtonView.swift */,
-				62E2A6022A3C055D0006BE51 /* ToolbarView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -136,6 +144,15 @@
 				624709C92A3AD4B6002AEE60 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		62E2A6062A3C0DB20006BE51 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				62E2A6072A3C0DD80006BE51 /* HeaderView.swift */,
+				62E2A6092A3C0E930006BE51 /* FeatureItemView.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,10 +229,13 @@
 				624709C52A3AD4B4002AEE60 /* MainView.swift in Sources */,
 				6209898B2A3AD600002CCABC /* MetronomeModel.swift in Sources */,
 				62E2A6032A3C055D0006BE51 /* ToolbarView.swift in Sources */,
+				62E2A60A2A3C0E930006BE51 /* FeatureItemView.swift in Sources */,
 				620989912A3ADB7B002CCABC /* ButtonView.swift in Sources */,
 				620989982A3AE864002CCABC /* MetronomeView.swift in Sources */,
+				62E2A6082A3C0DD80006BE51 /* HeaderView.swift in Sources */,
 				6209898D2A3AD702002CCABC /* bpmView.swift in Sources */,
 				624709C32A3AD4B4002AEE60 /* MetronomeApp.swift in Sources */,
+				62E2A6052A3C0CFD0006BE51 /* InfoView.swift in Sources */,
 				620989962A3AE78D002CCABC /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

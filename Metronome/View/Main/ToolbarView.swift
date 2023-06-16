@@ -22,16 +22,22 @@ struct ToolbarView: View {
     // MARK: - PROPERTY
     @Binding var metronome: Metronome
     
+    @State private var showInfoSheet: Bool = false
+    
     // MARK: - BODY
     var body: some View {
         HStack(spacing: 2) {
             Button {
                 // Show info sheet.
+                showInfoSheet.toggle()
             } label: {
                 Image(systemName: "info.circle")
                     .toolbarButtonModifier()
             }
             .disabled(metronome.isPlaying)
+            .sheet(isPresented: $showInfoSheet) {
+                InfoView()
+            }
             
             Button {
                 // Reset metronome.
@@ -44,7 +50,7 @@ struct ToolbarView: View {
         } //: HSTACK
         .padding(.vertical, 10)
         .padding(.leading, 70)
-        .padding(.trailing, 20)
+        .padding(.trailing, 30)
         .background(
             Capsule()
                 .foregroundColor(Color.accentColor)
