@@ -13,31 +13,27 @@ struct MainView: View {
     
     // MARK: - BODY
     var body: some View {
-        VStack {
-            bpmView(metronome: $metronome)
+        NavigationStack {
+            VStack {
+                bpmView(metronome: $metronome)
+                
+                Spacer()
+                
+                MetronomeView(metronome: $metronome)
+                
+                Spacer()
+                
+                ButtonView(metronome: $metronome)
+            } //: VSTACK
+            .padding()
             
-            Spacer()
-            
-            MetronomeView(metronome: $metronome)
-            
-            Spacer()
-            
-            ButtonView(metronome: $metronome)
-        } //: VSTACK
-        .padding()
-        .overlay(
-            Button {
-                // Reset metronome.
-                metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
-            } label: {
-                Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
-                    .font(.title)
-                    .foregroundColor(Color.accentColor)
-                    .padding()
-            }
-            .disabled(metronome.isPlaying)
-            , alignment: .trailing
-        )
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarView(metronome: $metronome)
+                        .offset(x: -150)
+                } //: TOOLBAR ITEM
+            } //: TOOLBAR
+        } //: NAVIGATION STACK
     }
 }
 

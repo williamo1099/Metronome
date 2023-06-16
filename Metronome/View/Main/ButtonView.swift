@@ -21,10 +21,10 @@ struct ButtonView: View {
             if !metronome.isPlaying {
                 // Start metronome
                 timer = Timer.scheduledTimer(withTimeInterval: 60.0 / Double(metronome.bpm), repeats: true) {_ in
-                    if metronome.pendulumPosition == 0 {
-                        metronome.pendulumPosition = 1
+                    if metronome.pendulumPosition + 1 <= 2 {
+                        metronome.pendulumPosition += 1
                     } else {
-                        metronome.pendulumPosition = 0
+                        metronome.pendulumPosition = 1
                     }
                     
                     playAudio(name: "metronome-click", type: "m4a")
@@ -36,6 +36,7 @@ struct ButtonView: View {
                 }
                 timer = nil
                 timer = Timer()
+                metronome.pendulumPosition = 0
             }
 
             metronome.isPlaying.toggle()
