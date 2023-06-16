@@ -10,8 +10,8 @@ import SwiftUI
 struct InfoView: View {
     // MARK: - PROPERTY
     private var featureItems: [[String]] = [
-        ["iphone", "The simplest one view app to start your metronome anytime you want."],
-        ["slider.vertical.3", "Set the metronome to whatever tempo you want between 40 and 200."],
+        ["iphone", "A simple one view app to start your metronome anytime you want."],
+        ["slider.vertical.3", "Set the metronome to the tempo you want between 40 and 200."],
         ["arrow.triangle.2.circlepath", "Reset the metronome to its default settings anytime you want."]
     ]
     
@@ -20,7 +20,7 @@ struct InfoView: View {
         VStack {
             Spacer()
             
-            HeaderView()
+            InfoHeaderView()
                 .padding(.bottom, 80)
             
             VStack(spacing: 30) {

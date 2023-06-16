@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HeaderView: View {
+struct InfoHeaderView: View {
     // MARK: - BODY
     var body: some View {
         VStack {
@@ -26,7 +26,7 @@ struct HeaderView: View {
 // MARK: - PREVIEW
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        InfoHeaderView()
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()

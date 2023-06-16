@@ -14,14 +14,15 @@ struct FeatureItemView: View {
     
     // MARK: - BODY
     var body: some View {
-        HStack(spacing: 25) {
+        HStack(spacing: 15) {
             Image(systemName: image)
                 .font(.largeTitle)
                 .foregroundColor(Color.accentColor)
+                .frame(width: 80)
             
             Text(description)
                 .font(.body)
-                .lineLimit(2)
+                .frame(width: 300, alignment: .leading)
         } //: HSTACK
     }
 }
@@ -29,7 +30,7 @@ struct FeatureItemView: View {
 // MARK: - PREVIEW
 struct FeatureItemView_Previews: PreviewProvider {
     static var previews: some View {
-        FeatureItemView(image: "iphone", description: "The simplest way to start your metronome with the tempo you want.")
+        FeatureItemView(image: "iphone", description: "This is a placeholder text. This is a placeholder text.")
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()

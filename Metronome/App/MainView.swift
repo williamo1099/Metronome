@@ -33,9 +33,10 @@ struct MainView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     ToolbarView(metronome: $metronome)
                         .offset(x: isToolbarOpened ? -70 : -150)
+                        .opacity(isToolbarOpened ? 1.0 : 0.7)
                     
                         .onTapGesture {
-                            withAnimation(.easeOut(duration: 0.3)) {
+                            withAnimation(.easeOut(duration: 0.35)) {
                                 isToolbarOpened.toggle()
                             }
                         }
