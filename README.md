@@ -9,11 +9,11 @@ A simple metronome iOS app built using Swift and SwiftUI. The main function of t
 ## Features
 The main objective of this app is being practical and useful with a simple design. Here are all features of the app. 
 * Play the metronome at any tempo user wants between 40 and 200.
+* Slide to increase or decrease the metronome bpm.
 * Reset all settings (tempo) to its default.
-* Show info sheet
+* Show info sheet.
 
 Other features are going to be implemented in the app as well. Here are some that are currently in my wishlist.
-* Slide to increase or decrease the bpm (besides buttons) so that user can increase or decrease bpm with ease.
 * An onboarding view for new users showing a welcome message and the app features.
 * Customize the icon app and theme.
 * Save all settings to cloud.

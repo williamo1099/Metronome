@@ -42,6 +42,16 @@ struct bpmView: View {
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .frame(minWidth: 150)
+                .gesture(
+                    DragGesture()
+                        .onChanged { gesture in
+                            let addition = Int(gesture.translation.width / 100)
+                            if metronome.bpm + addition <= 200 &&
+                                metronome.bpm + addition >= 40 {
+                                metronome.bpm += addition
+                            }
+                        }
+                )
             
             Button {
                 // Increase metronome bpm.

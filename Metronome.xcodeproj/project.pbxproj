@@ -126,13 +126,13 @@
 		624709C12A3AD4B4002AEE60 /* Metronome */ = {
 			isa = PBXGroup;
 			children = (
-				624F16222A3B0F40007A695B /* Info.plist */,
 				620989862A3AD5D4002CCABC /* App */,
 				620989872A3AD5D9002CCABC /* View */,
 				620989882A3AD5E2002CCABC /* Model */,
 				620989892A3AD5EC002CCABC /* Utility */,
 				620989922A3AE762002CCABC /* Sound */,
 				624709C62A3AD4B6002AEE60 /* Assets.xcassets */,
+				624F16222A3B0F40007A695B /* Info.plist */,
 				624709C82A3AD4B6002AEE60 /* Preview Content */,
 			);
 			path = Metronome;

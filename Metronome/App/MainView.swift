@@ -32,7 +32,7 @@ struct MainView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     ToolbarView(metronome: $metronome)
-                        .offset(x: isToolbarOpened ? -70 : -150)
+                        .offset(x: isToolbarOpened ? -70 : -170)
                         .opacity(isToolbarOpened ? 1.0 : 0.7)
                     
                         .onTapGesture {
