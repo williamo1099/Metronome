@@ -9,10 +9,17 @@ import SwiftUI
 
 @main
 struct MetronomeApp: App {
+    // MARK: - PROPERTY
+    @AppStorage("onboardingView") var onboardingViewActive: Bool = true
+    
     // MARK: - BODY
     var body: some Scene {
         WindowGroup {
-            MainView()
+            if onboardingViewActive {
+                OnboardingView()
+            } else {
+                MainView()
+            }
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FeatureItemView: View {
+struct OnboardingFeatureItemView: View {
     // MARK: - PROPERTY
     var image: String
     var description: String
@@ -30,7 +30,7 @@ struct FeatureItemView: View {
 // MARK: - PREVIEW
 struct FeatureItemView_Previews: PreviewProvider {
     static var previews: some View {
-        FeatureItemView(image: "iphone", description: "This is a placeholder text. This is a placeholder text.")
+        OnboardingFeatureItemView(image: "iphone", description: "This is a placeholder text. This is a placeholder text.")
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()
