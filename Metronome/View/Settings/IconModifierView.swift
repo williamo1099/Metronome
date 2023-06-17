@@ -23,6 +23,7 @@ struct IconModifierView: View {
                         .frame(width: 50, height: 50)
                         .cornerRadius(12)
                 }
+                .buttonStyle(BorderlessButtonStyle())
             } //: FOR EACH
             
             Spacer()
