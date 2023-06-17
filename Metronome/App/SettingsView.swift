@@ -11,9 +11,26 @@ struct SettingsView: View {
     // MARK: - BODY
     var body: some View {
         VStack {
-            // TODO: - ADD INFO VIEW
-            Text("Info view")
+            HeaderView()
+                .padding()
+                .padding(.bottom, 20)
+                .overlay(
+                    Rectangle()
+                        .fill(Color.primary)
+                        .frame(width: 100, height: 4)
+                        .cornerRadius(12)
+                    , alignment: .top
+                )
+            
+            Form {
+                Section("Change the app icon") {
+                    IconModifierView()
+                } //: SECTION
+            } //: FORM
+            
+            Spacer()
         } //: VSTACK
+        .padding()
     }
 }
 

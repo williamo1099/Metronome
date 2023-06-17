@@ -19,10 +19,13 @@
 		624709CA2A3AD4B6002AEE60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624709C92A3AD4B6002AEE60 /* Preview Assets.xcassets */; };
 		6263DDDC2A3D7E340005C05C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263DDDB2A3D7E340005C05C /* OnboardingView.swift */; };
 		6263DDDE2A3D80940005C05C /* OnboardingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263DDDD2A3D80940005C05C /* OnboardingButtonView.swift */; };
+		6263DDE12A3D86FF0005C05C /* IconModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263DDE02A3D86FF0005C05C /* IconModifierView.swift */; };
+		6263DDE52A3D96E90005C05C /* Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6263DDE32A3D96E80005C05C /* Dark.png */; };
+		6263DDE62A3D96E90005C05C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6263DDE42A3D96E90005C05C /* Default.png */; };
+		6263DDE82A3D9D5D0005C05C /* OnboardingFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263DDE72A3D9D5D0005C05C /* OnboardingFeatureView.swift */; };
 		62E2A6032A3C055D0006BE51 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A6022A3C055D0006BE51 /* ToolbarView.swift */; };
 		62E2A6052A3C0CFD0006BE51 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A6042A3C0CFD0006BE51 /* SettingsView.swift */; };
-		62E2A6082A3C0DD80006BE51 /* OnboardingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A6072A3C0DD80006BE51 /* OnboardingHeaderView.swift */; };
-		62E2A60A2A3C0E930006BE51 /* OnboardingFeatureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A6092A3C0E930006BE51 /* OnboardingFeatureItemView.swift */; };
+		62E2A6082A3C0DD80006BE51 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A6072A3C0DD80006BE51 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +43,13 @@
 		624F16222A3B0F40007A695B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6263DDDB2A3D7E340005C05C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		6263DDDD2A3D80940005C05C /* OnboardingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButtonView.swift; sourceTree = "<group>"; };
+		6263DDE02A3D86FF0005C05C /* IconModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModifierView.swift; sourceTree = "<group>"; };
+		6263DDE32A3D96E80005C05C /* Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dark.png; sourceTree = "<group>"; };
+		6263DDE42A3D96E90005C05C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6263DDE72A3D9D5D0005C05C /* OnboardingFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeatureView.swift; sourceTree = "<group>"; };
 		62E2A6022A3C055D0006BE51 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		62E2A6042A3C0CFD0006BE51 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		62E2A6072A3C0DD80006BE51 /* OnboardingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderView.swift; sourceTree = "<group>"; };
-		62E2A6092A3C0E930006BE51 /* OnboardingFeatureItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeatureItemView.swift; sourceTree = "<group>"; };
+		62E2A6072A3C0DD80006BE51 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +140,10 @@
 			children = (
 				620989862A3AD5D4002CCABC /* App */,
 				620989872A3AD5D9002CCABC /* View */,
+				62E2A6072A3C0DD80006BE51 /* HeaderView.swift */,
 				620989882A3AD5E2002CCABC /* Model */,
 				620989892A3AD5EC002CCABC /* Utility */,
+				6263DDE22A3D96C40005C05C /* AppIcon */,
 				620989922A3AE762002CCABC /* Sound */,
 				624709C62A3AD4B6002AEE60 /* Assets.xcassets */,
 				624F16222A3B0F40007A695B /* Info.plist */,
@@ -155,15 +163,24 @@
 		6263DDDF2A3D81E90005C05C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				6263DDE02A3D86FF0005C05C /* IconModifierView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		6263DDE22A3D96C40005C05C /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				6263DDE32A3D96E80005C05C /* Dark.png */,
+				6263DDE42A3D96E90005C05C /* Default.png */,
+			);
+			path = AppIcon;
 			sourceTree = "<group>";
 		};
 		62E2A6062A3C0DB20006BE51 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				62E2A6072A3C0DD80006BE51 /* OnboardingHeaderView.swift */,
-				62E2A6092A3C0E930006BE51 /* OnboardingFeatureItemView.swift */,
+				6263DDE72A3D9D5D0005C05C /* OnboardingFeatureView.swift */,
 				6263DDDD2A3D80940005C05C /* OnboardingButtonView.swift */,
 			);
 			path = Onboarding;
@@ -227,6 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6263DDE62A3D96E90005C05C /* Default.png in Resources */,
+				6263DDE52A3D96E90005C05C /* Dark.png in Resources */,
 				620989942A3AE779002CCABC /* metronome-click.m4a in Resources */,
 				624709CA2A3AD4B6002AEE60 /* Preview Assets.xcassets in Resources */,
 				624709C72A3AD4B6002AEE60 /* Assets.xcassets in Resources */,
@@ -243,10 +262,11 @@
 				624709C52A3AD4B4002AEE60 /* MainView.swift in Sources */,
 				6209898B2A3AD600002CCABC /* MetronomeModel.swift in Sources */,
 				62E2A6032A3C055D0006BE51 /* ToolbarView.swift in Sources */,
-				62E2A60A2A3C0E930006BE51 /* OnboardingFeatureItemView.swift in Sources */,
 				620989912A3ADB7B002CCABC /* ButtonView.swift in Sources */,
 				620989982A3AE864002CCABC /* MetronomeView.swift in Sources */,
-				62E2A6082A3C0DD80006BE51 /* OnboardingHeaderView.swift in Sources */,
+				6263DDE12A3D86FF0005C05C /* IconModifierView.swift in Sources */,
+				62E2A6082A3C0DD80006BE51 /* HeaderView.swift in Sources */,
+				6263DDE82A3D9D5D0005C05C /* OnboardingFeatureView.swift in Sources */,
 				6209898D2A3AD702002CCABC /* bpmView.swift in Sources */,
 				6263DDDE2A3D80940005C05C /* OnboardingButtonView.swift in Sources */,
 				624709C32A3AD4B4002AEE60 /* MetronomeApp.swift in Sources */,
