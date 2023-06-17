@@ -21,6 +21,7 @@ struct bpmView: View {
     // MARK: - PROPERTY
     @Binding var metronome: Metronome
     
+    @State private var sliding: Bool = false
     @State private var animating: Bool = false
     
     // MARK: - BODY
@@ -42,15 +43,33 @@ struct bpmView: View {
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .frame(minWidth: 150)
+                .overlay(
+                    Image("arrow")
+                        .resizable()
+                        .frame(width: 150, height: 100)
+                        .offset(y: 60)
+                        .foregroundColor(Color.accentColor)
+                        .opacity(sliding ? 0.8 : 0.0)
+                )
                 .gesture(
                     DragGesture()
                         .onChanged { gesture in
+                            withAnimation(.easeOut(duration: 0.5)) {
+                                sliding = true
+                            }
+                            
                             let addition = Int(gesture.translation.width / 100)
                             if metronome.bpm + addition <= 200 &&
                                 metronome.bpm + addition >= 40 {
                                 metronome.bpm += addition
                             }
-                        }
+                        } //: ON CHANGED
+                    
+                        .onEnded { _ in
+                            withAnimation(.easeOut(duration: 0.5)) {
+                                sliding = false
+                            }
+                        } //: ON ENDED
                 )
             
             Button {

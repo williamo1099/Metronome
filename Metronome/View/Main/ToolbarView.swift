@@ -21,6 +21,7 @@ extension Image {
 struct ToolbarView: View {
     // MARK: - PROPERTY
     @Binding var metronome: Metronome
+    @Binding var toolbarOpened: Bool
     
     @State private var showInfoSheet: Bool = false
     
@@ -47,7 +48,10 @@ struct ToolbarView: View {
                     .toolbarButtonModifier()
             }
             .disabled(metronome.isPlaying)
+            
+            Spacer()
         } //: HSTACK
+        .opacity(toolbarOpened ? 1.0 : 0.0)
         .padding(.vertical, 10)
         .padding(.leading, 70)
         .padding(.trailing, 30)
@@ -63,7 +67,7 @@ struct ToolbarView_Previews: PreviewProvider {
     @State static var metronome: Metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
     
     static var previews: some View {
-        ToolbarView(metronome: $metronome)
+        ToolbarView(metronome: $metronome, toolbarOpened: .constant(true))
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()
