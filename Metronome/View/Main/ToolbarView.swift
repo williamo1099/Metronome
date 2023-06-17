@@ -21,37 +21,37 @@ extension Image {
 struct ToolbarView: View {
     // MARK: - PROPERTY
     @Binding var metronome: Metronome
-    @Binding var toolbarOpened: Bool
+    @Binding var openToolbar: Bool
     
-    @State private var showInfoSheet: Bool = false
+    @State private var showSettingsSheet: Bool = false
     
     // MARK: - BODY
     var body: some View {
         HStack(spacing: 2) {
             Button {
-                // Show info sheet.
-                showInfoSheet.toggle()
-            } label: {
-                Image(systemName: "info.circle")
-                    .toolbarButtonModifier()
-            }
-            .disabled(metronome.isPlaying)
-            .sheet(isPresented: $showInfoSheet) {
-                InfoView()
-            }
-            
-            Button {
                 // Reset metronome.
                 metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
             } label: {
-                Image(systemName: "arrow.triangle.2.circlepath.circle")
+                Image(systemName: "arrow.triangle.2.circlepath")
                     .toolbarButtonModifier()
             }
             .disabled(metronome.isPlaying)
             
+            Button {
+                // Show info sheet.
+                showSettingsSheet.toggle()
+            } label: {
+                Image(systemName: "gear")
+                    .toolbarButtonModifier()
+            }
+            .disabled(metronome.isPlaying)
+            .sheet(isPresented: $showSettingsSheet) {
+                SettingsView()
+            }
+            
             Spacer()
         } //: HSTACK
-        .opacity(toolbarOpened ? 1.0 : 0.0)
+        .opacity(openToolbar ? 1.0 : 0.0)
         .padding(.vertical, 10)
         .padding(.leading, 70)
         .padding(.trailing, 30)
@@ -67,7 +67,7 @@ struct ToolbarView_Previews: PreviewProvider {
     @State static var metronome: Metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
     
     static var previews: some View {
-        ToolbarView(metronome: $metronome, toolbarOpened: .constant(true))
+        ToolbarView(metronome: $metronome, openToolbar: .constant(true))
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()

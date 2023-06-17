@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InfoView: View {
+struct SettingsView: View {
     // MARK: - BODY
     var body: some View {
         VStack {
@@ -20,7 +20,7 @@ struct InfoView: View {
 // MARK: - PREVIEW
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoView()
+        SettingsView()
             .preferredColorScheme(.dark)
     }
 }
