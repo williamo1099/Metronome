@@ -46,7 +46,7 @@ struct bpmView: View {
                 .overlay(
                     Image("arrow")
                         .resizable()
-                        .frame(width: 150, height: 100)
+                        .frame(width: 150, height: 150)
                         .offset(y: 60)
                         .foregroundColor(Color.accentColor)
                         .opacity(sliding ? 0.8 : 0.0)
