@@ -4,6 +4,7 @@ A simple metronome iOS app built using Swift and SwiftUI. The main function of t
 
 <p align="center">
     <img alt="App Demo" width="200" src="images/App%20Screenshot.png">
+    <img alt="App Demo" width="200" src="images/App%20Screenshot%20(2).png">
 </p>
 
 ## Features
