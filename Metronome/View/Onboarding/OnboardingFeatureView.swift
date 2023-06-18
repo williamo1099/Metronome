@@ -11,7 +11,8 @@ struct OnboardingFeatureView: View {
     // MARK: - PROPERTY
     private let featureItems: [[String]] = [
         ["iphone", "A simple one view app to start your metronome anytime you want."],
-        ["slider.vertical.3", "Set the metronome to the tempo you want between 40 and 200."],
+        ["slider.horizontal.below.rectangle", "Slide to increase or decrease the metronome tempo with ease."],
+        ["slider.vertical.3", "Customize the app by changing the app icon and more."],
         ["arrow.triangle.2.circlepath", "Reset the metronome to its default settings anytime you want."]
     ]
     
@@ -19,16 +20,7 @@ struct OnboardingFeatureView: View {
     var body: some View {
         VStack(spacing: 30) {
             ForEach(featureItems, id: \.self) { item in
-                HStack(spacing: 15) {
-                    Image(systemName: item[0])
-                        .font(.largeTitle)
-                        .foregroundColor(Color.accentColor)
-                        .frame(width: 80)
-                    
-                    Text(item[1])
-                        .font(.body)
-                        .frame(width: 300, alignment: .leading)
-                } //: HSTACK
+                OnboardingFeatureItemView(image: item[0], label: item[1])
             } //: FOR EACH
         } //: VSTACK
     }
