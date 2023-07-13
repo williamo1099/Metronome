@@ -89,7 +89,6 @@
 		620989882A3AD5E2002CCABC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				620989892A3AD5EC002CCABC /* Utility */,
 				6209898A2A3AD600002CCABC /* MetronomeModel.swift */,
 			);
 			path = Model;
@@ -181,6 +180,7 @@
 		6264629C2A5F953A005CD74F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				620989892A3AD5EC002CCABC /* Utility */,
 				6264629D2A5F954C005CD74F /* MetronomeViewModel.swift */,
 			);
 			path = ViewModels;
