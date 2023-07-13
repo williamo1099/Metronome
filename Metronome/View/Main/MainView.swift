@@ -25,7 +25,7 @@ struct MainView: View {
                 
                 Spacer()
                 
-                ButtonView(viewModel: viewModel)
+                StartButtonView(viewModel: viewModel)
             } //: VSTACK
             .padding()
             
@@ -47,7 +47,7 @@ struct MainView: View {
 }
 
 // MARK: - PREVIEW
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .preferredColorScheme(.dark)

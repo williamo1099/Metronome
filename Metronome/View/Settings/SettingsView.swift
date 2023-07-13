@@ -23,6 +23,7 @@ struct SettingsView: View {
                 )
             
             Form {
+                // ICON MODIFIER
                 Section("Change the app icon") {
                     IconModifierView()
                 } //: SECTION
@@ -35,7 +36,7 @@ struct SettingsView: View {
 }
 
 // MARK: - PREVIEW
-struct InfoView_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
             .preferredColorScheme(.dark)

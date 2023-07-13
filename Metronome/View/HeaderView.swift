@@ -11,7 +11,7 @@ struct HeaderView: View {
     // MARK: - BODY
     var body: some View {
         VStack {
-            Image("metronome-0")
+            Image("metronome-center")
                 .resizable()
                 .foregroundColor(Color.accentColor)
                 .frame(width: 70, height: 70)

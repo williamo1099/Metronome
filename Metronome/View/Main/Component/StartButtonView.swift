@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ButtonView: View {
+struct StartButtonView: View {
     // MARK: - PROPERTY
     @ObservedObject var viewModel: MetronomeViewModel
     
@@ -42,11 +42,11 @@ struct ButtonView: View {
 }
 
 // MARK: - PREVIEW
-struct ButtonView_Previews: PreviewProvider {
+struct StartButtonView_Previews: PreviewProvider {
     static var viewModel: MetronomeViewModel = MetronomeViewModel()
     
     static var previews: some View {
-        ButtonView(viewModel: viewModel)
+        StartButtonView(viewModel: viewModel)
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()
