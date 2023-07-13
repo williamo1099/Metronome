@@ -7,8 +7,13 @@
 
 import Foundation
 
+enum PendulumPosition {
+    case left
+    case right
+}
+
 struct Metronome {
     var bpm: Int
-    var pendulumPosition: Int
+    var pendulumPosition: PendulumPosition
     var isPlaying: Bool
 }
