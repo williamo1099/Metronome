@@ -19,7 +19,7 @@ extension Image {
 
 struct bpmView: View {
     // MARK: - PROPERTY
-    @Binding var metronome: Metronome
+    @ObservedObject var viewModel: MetronomeViewModel
     
     @State private var sliding: Bool = false
     @State private var animating: Bool = false
@@ -29,17 +29,15 @@ struct bpmView: View {
         HStack(alignment: .center, spacing: 20) {
             Button {
                 // Decrease metronome bpm.
-                if metronome.bpm > 40 {
-                    metronome.bpm -= 1
-                }
+                viewModel.decreaseBpm()
             } label: {
                 Image(systemName: "minus.circle.fill")
                     .bpmButtonModifier()
                     .offset(x: animating ? 0.0 : -20.0)
             }
-            .disabled(metronome.isPlaying)
+            .disabled(viewModel.getIsPlaying())
             
-            Text("\(metronome.bpm) bpm")
+            Text("\(viewModel.getBpm()) bpm")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .frame(minWidth: 150)
@@ -58,10 +56,13 @@ struct bpmView: View {
                                 sliding = true
                             }
                             
-                            let addition = Int(gesture.translation.width / 100)
-                            if metronome.bpm + addition <= 200 &&
-                                metronome.bpm + addition >= 40 {
-                                metronome.bpm += addition
+                            let translationValue = Int(gesture.translation.width / 100)
+                            if translationValue > 0 {
+                                // Sliding to the right (positive value).
+                                viewModel.increaseBpm(by: translationValue)
+                            } else {
+                                // Sliding to the left (negative value).
+                                viewModel.decreaseBpm(by: -translationValue)
                             }
                         } //: ON CHANGED
                     
@@ -74,15 +75,13 @@ struct bpmView: View {
             
             Button {
                 // Increase metronome bpm.
-                if metronome.bpm < 200 {
-                    metronome.bpm += 1
-                }
+                viewModel.increaseBpm()
             } label: {
                 Image(systemName: "plus.circle.fill")
                     .bpmButtonModifier()
                     .offset(x: animating ? 0.0 : 20.0)
             }
-            .disabled(metronome.isPlaying)
+            .disabled(viewModel.getIsPlaying())
         } //: HSTACK
         .opacity(animating ? 1.0 : 0.0)
         .onAppear {
@@ -95,10 +94,10 @@ struct bpmView: View {
 
 // MARK: - PREVIEW
 struct bpmView_Previews: PreviewProvider {
-    @State static var metronome: Metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
+    static var viewModel: MetronomeViewModel = MetronomeViewModel()
     
     static var previews: some View {
-        bpmView(metronome: $metronome)
+        bpmView(viewModel: viewModel)
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()

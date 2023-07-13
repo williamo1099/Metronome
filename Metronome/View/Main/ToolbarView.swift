@@ -20,7 +20,7 @@ extension Image {
 
 struct ToolbarView: View {
     // MARK: - PROPERTY
-    @Binding var metronome: Metronome
+    @ObservedObject var viewModel: MetronomeViewModel
     @Binding var openToolbar: Bool
     
     @State private var showSettingsSheet: Bool = false
@@ -30,12 +30,12 @@ struct ToolbarView: View {
         HStack(spacing: 2) {
             Button {
                 // Reset metronome.
-                metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
+                viewModel.resetMetronome()
             } label: {
                 Image(systemName: "arrow.triangle.2.circlepath")
                     .toolbarButtonModifier()
             }
-            .disabled(metronome.isPlaying)
+            .disabled(viewModel.getIsPlaying())
             
             Button {
                 // Show info sheet.
@@ -44,7 +44,7 @@ struct ToolbarView: View {
                 Image(systemName: "gear")
                     .toolbarButtonModifier()
             }
-            .disabled(metronome.isPlaying)
+            .disabled(viewModel.getIsPlaying())
             .sheet(isPresented: $showSettingsSheet) {
                 SettingsView()
             }
@@ -64,10 +64,10 @@ struct ToolbarView: View {
 
 // MARK: - PREVIEW
 struct ToolbarView_Previews: PreviewProvider {
-    @State static var metronome: Metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
+    static var viewModel: MetronomeViewModel = MetronomeViewModel()
     
     static var previews: some View {
-        ToolbarView(metronome: $metronome, openToolbar: .constant(true))
+        ToolbarView(viewModel: viewModel, openToolbar: .constant(true))
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()

@@ -91,6 +91,7 @@
 		620989882A3AD5E2002CCABC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				620989892A3AD5EC002CCABC /* Utility */,
 				6209898A2A3AD600002CCABC /* MetronomeModel.swift */,
 			);
 			path = Model;
@@ -147,7 +148,6 @@
 				62E2A6072A3C0DD80006BE51 /* HeaderView.swift */,
 				620989882A3AD5E2002CCABC /* Model */,
 				6264629C2A5F953A005CD74F /* ViewModels */,
-				620989892A3AD5EC002CCABC /* Utility */,
 				6263DDE22A3D96C40005C05C /* AppIcon */,
 				620989922A3AE762002CCABC /* Sound */,
 				624709C62A3AD4B6002AEE60 /* Assets.xcassets */,

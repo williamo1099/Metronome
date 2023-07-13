@@ -9,13 +9,13 @@ import SwiftUI
 
 struct MetronomeView: View {
     // MARK: - PROPERTY
-    @Binding var metronome: Metronome
+    @ObservedObject var viewModel: MetronomeViewModel
     
     @State private var animating: Bool = false
     
     // MARK: - BODY
     var body: some View {
-        Image("metronome-\(metronome.pendulumPosition)")
+        Image("metronome-\(viewModel.getPendulumPosition())")
             .resizable()
             .scaledToFit()
             .foregroundColor(Color.primary)
@@ -30,10 +30,10 @@ struct MetronomeView: View {
 
 // MARK: - PREVIEW
 struct MetronomeView_Previews: PreviewProvider {
-    @State static var metronome: Metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
+    static var viewModel: MetronomeViewModel = MetronomeViewModel()
     
     static var previews: some View {
-        MetronomeView(metronome: $metronome)
+        MetronomeView(viewModel: viewModel)
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()

@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum PendulumPosition {
-    case left
-    case right
+enum PendulumPosition: String {
+    case left = "left"
+    case right = "right"
 }
 
 struct Metronome {

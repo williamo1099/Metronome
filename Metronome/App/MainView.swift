@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     // MARK: - PROPERTY
-    @State var metronome: Metronome = Metronome(bpm: 100, pendulumPosition: 0, isPlaying: false)
+    @ObservedObject var viewModel: MetronomeViewModel = MetronomeViewModel()
     
     @State var openToolbar: Bool = false
     
@@ -17,21 +17,21 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                bpmView(metronome: $metronome)
+                bpmView(viewModel: viewModel)
                 
                 Spacer()
                 
-                MetronomeView(metronome: $metronome)
+                MetronomeView(viewModel: viewModel)
                 
                 Spacer()
                 
-                ButtonView(metronome: $metronome)
+                ButtonView(viewModel: viewModel)
             } //: VSTACK
             .padding()
             
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    ToolbarView(metronome: $metronome, openToolbar: $openToolbar)
+                    ToolbarView(viewModel: viewModel, openToolbar: $openToolbar)
                         .offset(x: openToolbar ? -50 : -150)
                         .opacity(openToolbar ? 1.0 : 0.7)
                     
