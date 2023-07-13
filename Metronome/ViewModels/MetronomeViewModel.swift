@@ -8,11 +8,7 @@
 import Foundation
 
 class MetronomeViewModel: ObservableObject {
-    @Published var metronome: Metronome {
-        get {
-            return self.metronome
-        }
-    }
+    @Published var metronome: Metronome
     
     private var timer: Timer?
     
@@ -85,14 +81,17 @@ class MetronomeViewModel: ObservableObject {
     
     /**
      Start the metronome when not playing or stop the metronome when playing.
+     
     */
     func startMetronome() {
         if !self.metronome.isPlaying {
             // Start the metronome.
-            timer = Timer.scheduledTimer(withTimeInterval: 60.0 / Double(self.metronome.bpm), repeats: true) {_ in
-                if self.metronome.pendulumPosition == .left {
+            timer = Timer.scheduledTimer(withTimeInterval: 60.0 / Double(self.metronome.bpm), repeats: true) { _ in
+                // Switch the metronome's pendulum position.
+                switch self.metronome.pendulumPosition {
+                case .left:
                     self.metronome.pendulumPosition = .right
-                } else {
+                case .right:
                     self.metronome.pendulumPosition = .left
                 }
                 
